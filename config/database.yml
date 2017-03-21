@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch('RAILS_MAX_THREADS') { 5 } %>
+  username: <%= ENV.fetch('DB_USERNAME') %>
+  password: <%= ENV.fetch('DB_PASSWORD') %>
+  host: localhost
+
+development:
+  <<: *default
+  database: wiki_underground_development
+
+test:
+  <<: *default
+  database: wiki_underground_test
+
+production:
+  <<: *default
+  database: wiki_underground_production
