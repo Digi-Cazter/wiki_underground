@@ -16,5 +16,7 @@
 //= require tether
 //= require bootstrap
 //= require bootstrap-sprockets
+//= require typeahead
+//= require medium-editor.min
 //= require init
 //= require_tree .

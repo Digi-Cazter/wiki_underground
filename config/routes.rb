@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#show', as: :profile_path
   get '/profile/lookup', to: 'profile#lookup', as: :profile_lookup_path
 
-  get '/wiki/*slug', to: 'wiki#show'
+  get '/wiki/:space_slug', to: 'spaces#show'
+  get '/wiki/:space_slug/*article_slug', to: 'wiki#show'
 
   root to: redirect('/profile')
 end

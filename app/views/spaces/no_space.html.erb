@@ -1,0 +1,12 @@
+<h1>
+  Whoops! No spaces called <strong><%= params[:space_slug] %></strong> found.
+</h1>
+<hr />
+<div style="padding: 10px; background: #F8F9FA; border: 1px solid #cccccc;">
+  <strong>Wiki Hive does not have a space created with this exact name.</strong> Please <%= link_to "search for <i>#{params[:space_slug]}</i> in Wiki Hive".html_safe, '#' %><br />
+  <ul>
+    <li><%= link_to 'Log in or create an account', new_user_session_path %> to create the <strong><i><%= params[:space_slug] %></i></strong> space.</li>
+    <li><%= link_to "Search for \"#{params[:space_slug]}\"", '#' %> in existing spaces.</li>
+    <li><%= link_to 'Look for spaces within Wiki Hive that link to this title', '#' %></li>
+  </ul>
+</div>

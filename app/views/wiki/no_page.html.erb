@@ -3,10 +3,10 @@
 </h1>
 <hr />
 <div style="padding: 10px; background: #F8F9FA; border: 1px solid #cccccc;">
-  <strong>Wiki Underground does not have an article with this exact name.</strong> Please <%= link_to "search for <i>#{params[:slug]}</i> in Wiki Underground".html_safe, '#' %><br />
+  <strong>Wiki Hive does not have an article with this exact name.</strong> Please <%= link_to "search for <i>#{params[:slug]}</i> in Wiki Hive".html_safe, '#' %><br />
   <ul>
     <li><%= link_to 'Log in or create an account', new_user_session_path %> to start the <strong><i><%= params[:slug] %></i></strong> article.</li>
     <li><%= link_to "Search for \"#{params[:slug]}\"", '#' %> in existing articles.</li>
-    <li><%= link_to 'Look for pages within Wiki Underground that link to this title', '#' %></li>
+    <li><%= link_to 'Look for pages within Wiki Hive that link to this title', '#' %></li>
   </ul>
 </div>

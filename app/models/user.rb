@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :pages
+  has_many :spaces
+  has_many :members
+  has_many :organizations, through: :members
 end

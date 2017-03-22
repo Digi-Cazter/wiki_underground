@@ -10,19 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170321174945) do
+ActiveRecord::Schema.define(version: 20170322225505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "pages", force: :cascade do |t|
+  create_table "members", force: :cascade do |t|
+    t.integer  "organization_id"
     t.integer  "user_id"
-    t.string   "title",      null: false
-    t.string   "slug"
+    t.string   "role",            null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["organization_id", "user_id"], name: "index_members_on_organization_id_and_user_id", unique: true, using: :btree
+    t.index ["organization_id"], name: "index_members_on_organization_id", using: :btree
+    t.index ["user_id"], name: "index_members_on_user_id", using: :btree
+  end
+
+  create_table "organizations", force: :cascade do |t|
+    t.string   "name"
+    t.string   "slug",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_organizations_on_slug", unique: true, using: :btree
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.integer  "space_id"
+    t.string   "title"
+    t.string   "slug",       null: false
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_pages_on_user_id", using: :btree
+    t.index ["space_id", "slug"], name: "index_pages_on_space_id_and_slug", unique: true, using: :btree
+    t.index ["space_id"], name: "index_pages_on_space_id", using: :btree
+  end
+
+  create_table "spaces", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "slug",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id", "slug"], name: "index_spaces_on_user_id_and_slug", unique: true, using: :btree
+    t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade do |t|
