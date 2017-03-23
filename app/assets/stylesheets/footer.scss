@@ -1,0 +1,10 @@
+.js-font {
+  //should probably set  the font-size to a px/rem/em instead of %
+  &-decrease {
+    font-size: 0.75rem;
+  }
+
+  &-increase {
+    font-size: 1.25rem;
+  }
+}
