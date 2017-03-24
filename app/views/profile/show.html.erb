@@ -1,1 +1,13 @@
-<%= image_tag @user.avatar.url, width: 200 %>
+<div class="container">
+  <%= link_to "View My Space", '/wiki/donavan_white' %>
+  <div style="width: 100%; background: #2C2509; border: 1px solid grey; overflow: auto;">
+    <div style="width: 201px; float: left;">
+      <%= image_tag @user.avatar.url, width: 200 %>
+      <%= button_to "Change Photo", '#', style: 'padding: 3px; color: white; background: #2F8A21; border: 0; cursor: pointer; width: 200px;' %>
+    </div>
+    <div style="width: 100%; max-width: 440px; float: left; padding: 5px; color: white;">
+      <h3><strong>Donavan White</strong></h3>
+      Senior Software Engineer
+    </div>
+  </div>
+</div>

@@ -1,0 +1,167 @@
+.tt-menu {
+  background: white;
+  max-width: 700px;
+  width: 100%;
+  border: 1px solid grey;
+
+  .tt-suggestion.tt-selectable {
+    padding: 9px;
+    cursor: pointer;
+
+    &:hover {
+      background: rgba(50,50,50,0.4)
+    }
+  }
+}
+
+.search-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  padding: 3px;
+  background: black;
+  color: white;
+}
+
+div.hive-loader {
+  position: relative;
+  right: 35px;
+  bottom: 13px;
+
+  #a {
+    top: -5px;
+    left: -8px;
+  }
+
+  #b {
+    top: -10px;
+    left: 0px;
+  }
+
+  #c {
+    top: -5px;
+    left: 8px;
+  }
+
+  #d {
+    top: 5px;
+    left: -8px;
+  }
+
+  #e {
+    top: 0px;
+    left: 0px;
+  }
+
+  #f {
+    top: 5px;
+    left: 8px;
+  }
+
+  #g {
+    top: 10px;
+    left: 0px;
+  }
+
+  &.animate {
+    #a {
+      animation: a 1s ease-in-out infinite;
+    }
+
+    #b {
+      animation: b 1s ease-in-out infinite;
+    }
+
+    #c {
+      animation: c 1s ease-in-out infinite;
+    }
+
+    #d {
+      animation: d 1s ease-in-out infinite;
+    }
+
+    #e {
+      animation: e 1s ease-in-out infinite;
+    }
+
+    #f {
+      animation: f 1s ease-in-out infinite;
+    }
+
+    #g {
+      animation: h 1s ease-in-out infinite;
+    }
+  }
+}
+
+div.hive-loader div {
+  list-style: none;
+  list-style-type: none;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 20px;
+  height: 20px;
+}
+
+div.hive-loader div img {
+  position: relative;
+  width: 10px;
+  height: 10px;
+}
+
+@keyframes a {
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes b {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes c {
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes d {
+  40% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes f {
+  30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes g {
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes h {
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

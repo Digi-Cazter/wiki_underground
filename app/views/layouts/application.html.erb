@@ -12,7 +12,7 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
+    <nav style="border-top: 2px solid #2F8A21;" class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,36 +24,59 @@
         <!-- <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <div class="dropdown">
-              <%= link_to '#', class: 'nav-link dropdown', data: {toggle: 'dropdown'}, aria: {haspopup: true, expanded: false} do %>
+              <%#= link_to '#', class: 'nav-link dropdown', data: {toggle: 'dropdown'}, aria: {haspopup: true, expanded: false} do %>
                 Spaces <span class="sr-only">(current)</span>
-              <% end %>
+              <%# end %>
 
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton1">
-                <%= link_to 'General', profile_path_url, class: 'dropdown-item' %>
+                <%#= link_to 'General', profile_path_url, class: 'dropdown-item' %>
               </div>
             </div>
           </li>
 
           <li class="nav-item active">
-            <%= link_to '/', class: 'nav-link' do %>
+            <%#= link_to '/', class: 'nav-link' do %>
               People
-            <% end %>
+            <%# end %>
           </li>
 
           <li class="nav-item active">
-            <%= link_to '/', class: 'nav-link' do %>
+            <%#= link_to '/', class: 'nav-link' do %>
               Create
-            <% end %>
+            <%# end %>
           </li>
 
           <li class="nav-item active">
-            <%= link_to '/', class: 'nav-link' do %>
+            <%#= link_to '/', class: 'nav-link' do %>
               Help
-            <% end %>
+            < end %>
           </li>
         </ul> -->
         <form class="form-inline my-2 my-lg-0" style="margin: 0 auto;">
-          <input class="form-control mr-sm-2" type="text" style="width: 700px;" placeholder="How may I help?">
+          <%= text_field_tag :site_search, '', autocomplete: false, class: 'form-control mr-sm-2 typeahead-search', style: 'width: 700px', placeholder: 'How may I help you?' %>
+          <div id='hive-loader' class='hive-loader'>
+            <div id='a'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+            <div id='b'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+            <div id='c'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+            <div id='d'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+            <div id='e'>
+              <%= image_tag 'hex-yellow.png' %>
+            </div>
+            <div id='f'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+            <div id='g'>
+              <%= image_tag 'hex-green.png' %>
+            </div>
+          </div>
         </form>
       </div>
       <div class='nav-item'>
@@ -62,7 +85,7 @@
             <%= image_tag current_user.avatar.url, width: 37, style: 'border: 1px solid #F2C718; padding: 2px;' %>
           <% end %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
-            <%= link_to 'My Profile', profile_path_url, class: 'dropdown-item' %>
+            <%= link_to 'My Profile', '/profile', class: 'dropdown-item' %>
             <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
           </div>
         </div>
