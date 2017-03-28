@@ -7,6 +7,7 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
 
   has_many :spaces, as: :owner
+  accepts_nested_attributes_for :spaces
   has_many :members
   has_many :organizations, through: :members
 end

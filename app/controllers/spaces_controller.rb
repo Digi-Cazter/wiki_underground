@@ -17,12 +17,21 @@ class SpacesController < ApplicationController
   end
 
   def create
-    redirect_to "/wiki/#{params[:space][:slug]}?edit=true&title=#{params[:space][:name]}"
+    @space = Space.new(space_params)
+    @space.owner = current_user
+    if @space.save!
+      redirect_to "/wiki/#{@space.slug}"
+    else
+    end
   end
 
   private
 
   def record_not_found
     render 'no_space'
+  end
+
+  def space_params
+    params.require(:space).permit(:name, :slug, :owner, :owner_id)
   end
 end

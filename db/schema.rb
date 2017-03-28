@@ -46,16 +46,14 @@ ActiveRecord::Schema.define(version: 20170324230435) do
   end
 
   create_table "spaces", force: :cascade do |t|
-    t.integer  "user_id"
     t.string   "name"
     t.string   "slug",       null: false
-    t.string   "owner",      null: false
+    t.string   "owner_type", null: false
     t.integer  "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner", "owner_id"], name: "index_spaces_on_owner_and_owner_id", using: :btree
-    t.index ["user_id", "slug"], name: "index_spaces_on_user_id_and_slug", unique: true, using: :btree
-    t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
+    t.index ["owner_type", "owner_id"], name: "index_spaces_on_owner_type_and_owner_id", using: :btree
+    t.index ["slug"], name: "index_spaces_on_slug", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|

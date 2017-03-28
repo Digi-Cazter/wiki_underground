@@ -1,7 +1,10 @@
-<div>
+<%= form_for @space do |f| %>
   <strong>Space Title:</strong><br />
   <h2><%= params[:title] %></h2>
+  <%= f.hidden_field :name %>
+  <%= f.hidden_field :slug, value: params[:title].gsub(' ', '_') %>
   <hr />
   <strong>Description:</strong>
-  <textarea id="editor"></textarea>
-</div>
+  <%= text_area_tag :description, nil, id: 'editor' %>
+  <%= f.submit class: 'btn btn-primary' %>
+<% end %>
