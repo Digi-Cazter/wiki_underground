@@ -1,0 +1,5 @@
+<%= form_for @new_space do |f| %>
+  Name: <%= f.text_field :name, id: 'space_name' %><br />
+  <%= f.hidden_field :slug, id: 'space_slug' %>
+  <%= f.submit %>
+<% end %>

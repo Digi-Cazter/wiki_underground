@@ -2,8 +2,19 @@ $(document).on "turbolinks:load", ->
   init_login()
   init_header()
   init_search()
+  init_create_resource()
   init_footer()
+  init_editor()
 
+init_editor = ->
+  new SimpleMDE(
+    element: document.getElementById("editor")
+    autosave:
+      enabled: true
+      uniqueId: "WikiHive"
+      deplay: 10000
+  )
+  # window.simplemde.value("hello world")
 init_header = ->
   $('.dropdown').dropdown()
   $('.profile-dropdown').dropdown()
@@ -16,6 +27,13 @@ init_login = ->
         $('#avatar-login').attr('src', data.avatar)
         $('#welcome-name').html(data.name)
         $('#welcome').show()
+
+init_create_resource = ->
+  name_field = $('#space_name')
+  slug_field = $('#space_slug')
+
+  name_field.on 'keyup', ->
+    slug_field.val(name_field.val().replace(' ', '_'))
 
 init_search = ->
   commands = ['Create new Page', 'Create new Space']
@@ -73,9 +91,9 @@ init_search = ->
   window.typeahead_search.on 'typeahead:selected', (obj, datum) ->
     switch datum
       when "Create new Space"
-        alert('Create a space')
+        $('#create_space').modal('show');
       when "Create new Page"
-        alert('Create a page')
+        $('#create_page').modal('show');
     $(this).typeahead("val", "")
     return
 

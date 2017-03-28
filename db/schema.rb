@@ -49,8 +49,11 @@ ActiveRecord::Schema.define(version: 20170324230435) do
     t.integer  "user_id"
     t.string   "name"
     t.string   "slug",       null: false
+    t.string   "owner",      null: false
+    t.integer  "owner_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["owner", "owner_id"], name: "index_spaces_on_owner_and_owner_id", using: :btree
     t.index ["user_id", "slug"], name: "index_spaces_on_user_id_and_slug", unique: true, using: :btree
     t.index ["user_id"], name: "index_spaces_on_user_id", using: :btree
   end

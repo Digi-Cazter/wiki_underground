@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/profile', to: 'profile#show', as: :profile_path
   get '/profile/lookup', to: 'profile#lookup', as: :profile_lookup_path
 
+  resources :spaces, only: [:new, :create]
+
   get '/wiki/:space_slug', to: 'spaces#show'
   get '/wiki/:space_slug/*page_slug', to: 'wiki#show'
 

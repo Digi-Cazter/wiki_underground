@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="turbolinks-cache-control" content="no-cache">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -53,7 +54,7 @@
           </li>
         </ul> -->
         <form class="form-inline my-2 my-lg-0" style="margin: 0 auto;">
-          <%= text_field_tag :site_search, '', autocomplete: false, class: 'form-control mr-sm-2 typeahead-search', style: 'width: 700px', placeholder: 'How may I help you?' %>
+          <%= text_field_tag :site_search, '', autocomplete: false, class: 'form-control mr-sm-2 typeahead-search', style: 'width: 700px; background-color: #4D431A; color: white;', placeholder: 'How may I help you?' %>
           <div id='hive-loader' class='hive-loader'>
             <div id='a'>
               <%= image_tag 'hex-green.png' %>
@@ -96,6 +97,42 @@
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
       <%= yield %>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="create_space" tabindex="-1" role="dialog" aria-labelledby="Create Space" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create a new space</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <%= render 'spaces/new' %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="create_page" tabindex="-1" role="dialog" aria-labelledby="Create Space" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Create a new page</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Create</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

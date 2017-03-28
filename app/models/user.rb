@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   mount_uploader :avatar, AvatarUploader
 
-  has_many :spaces
+  has_many :spaces, as: :owner
   has_many :members
   has_many :organizations, through: :members
 end

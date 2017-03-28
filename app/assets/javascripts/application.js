@@ -12,11 +12,12 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require turbolinks
 //= require tether
+//= require simplemde.min
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require typeahead
-//= require medium-editor.min
 //= require init
 //= require_tree .
