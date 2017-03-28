@@ -1,0 +1,20 @@
+<div>
+  <%= form_for space_wiki_index_path(@space, @article) do |f| %>
+    <strong>Space Title:</strong><br />
+    <div>
+      <div style="float: left;">
+        <h2><%= params[:title].gsub('_', ' ') %></h2>
+        <%= f.hidden_field :name %>
+        <%= f.hidden_field :slug, value: params[:title].gsub(' ', '_') %>
+      </div>
+
+      <div style="float: right;">
+        <%= f.submit "Create Article", class: 'btn btn-primary' %>
+      </div>
+      <div style="clear: both;"></div>
+    </div>
+    <hr />
+    <strong>Content:</strong>
+    <%= text_area_tag :content, nil, id: 'editor' %>
+  <% end %>
+</div>

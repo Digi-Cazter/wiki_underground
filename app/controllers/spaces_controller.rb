@@ -2,17 +2,18 @@ class SpacesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def show
-    is_edit = params[:edit] == 'true'
+    @space = Space.find_by_slug!(params[:space_slug])
+  rescue ActiveRecord::RecordNotFound
+    record_not_found
+  end
 
-    if is_edit
-      @space = Space.new({name: params[:space_slug]})
-      render 'create'
-    else
-      @space = Space.find_by_slug!(params[:space_slug])
-    end
+  def edit
+    @space = Space.find_by_slug!(params[:space_slug])
+    render :new
   end
 
   def new
+    redirect_to root_path unless params[:title]
     @space = Space.new
   end
 

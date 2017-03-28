@@ -9,7 +9,7 @@
         <h4 class="card-title">Articles</h4>
         <h6 class="card-subtitle mb-2 text-muted"><%= @space.pages.count %> Pages</h6>
         <p class="card-text"></p>
-        <a href="#" class="card-link">Create New Article</a>
+        <%= link_to 'Create New Article', new_space_wiki_path(@space), class: 'card-link' %>
         <!-- <a href="#" class="card-link">Another link</a> -->
       </div>
     </div>

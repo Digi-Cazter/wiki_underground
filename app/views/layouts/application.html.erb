@@ -12,7 +12,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body style="background: white;">
+  <body class="<%= controller_name %>-controller <%= action_name %>-action" style="background: white;">
     <nav style="border-top: 2px solid #2F8A21;" class="navbar navbar-toggleable-md navbar-inverse bg-inverse fixed-top">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -110,7 +110,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <%= render 'spaces/new' %>
+            <%= render 'spaces/new_modal' %>
           </div>
         </div>
       </div>

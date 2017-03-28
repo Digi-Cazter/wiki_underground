@@ -19,5 +19,11 @@
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require typeahead
+//= require cable
 //= require init
-//= require_tree .
+////////////////////////////////
+// Don't edit above this line //
+////////////////////////////////
+//= require app.search
+//= require app.login
+//= require app.editor
